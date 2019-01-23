@@ -1,7 +1,7 @@
 window.addEventListener('load', () => {
     setInterval(() => {
         const now = Date.now();
-        const grad = new Date(2022, 5, 1, 0, 0, 0, 0).getTime();
+        const grad = new Date('2022-05-01T00:00:00').getTime();
         const timeLeft = Math.max(grad - now, 0);
         const secondsLeft = Math.floor(timeLeft / 1000) % 60;
         const minutesLeft = Math.floor(timeLeft / (1000 * 60)) % 60;
