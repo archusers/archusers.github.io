@@ -24,8 +24,12 @@ window.addEventListener('load', () => {
     }
 
     // Will type one character every 30ms after the button is clicked
+    let timeTravelPressed = false;
     document.querySelector("#time-travel").addEventListener("click", () => {
-        setInterval(typeChar, 30);
+        if (!timeTravelPressed) {
+            setInterval(typeChar, 30);
+	    timeTravelPressed = true;
+	}
     });
 
     /*
