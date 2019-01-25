@@ -23,8 +23,10 @@ window.addEventListener('load', () => {
         loreParagraphs[i].innerHTML = "";
     }
 
-    // Will type one character every 30ms after 2000ms have passed
-    setTimeout(() => { setInterval(typeChar, 30); }, 2000);
+    // Will type one character every 30ms after the button is clicked
+    document.querySelector("#time-travel").addEventListener("click", () => {
+        setInterval(typeChar, 30);
+    });
 
     /*
      * Types one character of lore.
