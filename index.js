@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-    setInterval(() => {
+    function countdown() {
         const now = Date.now();
         const grad = new Date('2022-05-01T00:00:00').getTime();
         const timeLeft = Math.max(grad - now, 0);
@@ -8,11 +8,13 @@ window.addEventListener('load', () => {
         const hoursLeft = Math.floor(timeLeft / (1000 * 60 * 60)) % 24;
         const daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24)) % 365;
         const yearsLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24 * 365));
-        const countDown = `Graduating in ${yearsLeft} years, ${daysLeft} days, ${hoursLeft} hours, ${minutesLeft} minutes, ${secondsLeft} seconds.`
+        const countDown = `Graduating in ${yearsLeft} years, ${daysLeft} days, ${hoursLeft} hours, ${minutesLeft} minutes, ${secondsLeft} seconds.`;
 
         const graduatingElement = document.getElementById('graduating');
         graduatingElement.innerHTML = countDown;
-    }, 1);
+    }
+    countdown();
+    setInterval(countdown, 1000);
 
     // Gets the text from each paragraph, then clears the contents of each
     // paragraph so that they can be retyped one character at a time
@@ -28,8 +30,8 @@ window.addEventListener('load', () => {
     document.querySelector("#time-travel").addEventListener("click", () => {
         if (!timeTravelPressed) {
             setInterval(typeChar, 30);
-	    timeTravelPressed = true;
-	}
+            timeTravelPressed = true;
+        }
     });
 
     /*
@@ -40,14 +42,14 @@ window.addEventListener('load', () => {
     function typeChar() {
         // If we are done typing, do nothing
         if (paragraphIndex == textArr.length) {
-	    return;
-	}
+            return;
+        }
         loreParagraphs[paragraphIndex].innerHTML += textArr[paragraphIndex].charAt(charIndex);
         charIndex++;
         // If we have reached the end of a paragraph, go to the beginning of the next paragraph
         if (charIndex >= textArr[paragraphIndex].length) {
-	    charIndex = 0;
-	    paragraphIndex++;
+            charIndex = 0;
+            paragraphIndex++;
         }
     }
 });
