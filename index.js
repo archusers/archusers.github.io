@@ -8,8 +8,11 @@ window.addEventListener('load', () => {
         const hoursLeft = Math.floor(timeLeft / (1000 * 60 * 60)) % 24;
         const daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24)) % 365;
         const yearsLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24 * 365));
-        const yearStr = yearsLeft > 1 ? "years" : "year";
-        const countDown = `Graduating in ${yearsLeft} ${yearStr}, ${daysLeft} days, ${hoursLeft} hours, ${minutesLeft} minutes, ${secondsLeft} seconds.`;
+        let yearStr = '';
+        if (yearsLeft > 0) {
+            yearStr = `${yearsLeft} ${yearsLeft > 1 ? "years" : "year"}, `;
+        }
+        const countDown = `Graduating in ${yearStr}${daysLeft} days, ${hoursLeft} hours, ${minutesLeft} minutes, ${secondsLeft} seconds.`;
 
         const graduatingElement = document.getElementById('graduating');
         graduatingElement.innerHTML = countDown;
