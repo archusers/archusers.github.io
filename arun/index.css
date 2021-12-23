@@ -1,0 +1,26 @@
+body {
+    background-color: black;
+    color: #00cc00;
+    font-family: monospace;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#time-travel {
+    background-color: black;
+    color: #00cc00;
+    font-family: monospace;
+    border: 1px solid #00cc00;
+    padding: 5px;
+}
+
+/* Tablet portrait and smaller */
+@media only screen
+  and (max-device-width: 900px) {
+
+    body {
+	margin-left: 5%;
+	margin-right: 5%;
+    }
+
+}
