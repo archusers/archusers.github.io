@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
     });
 
     /*
-     * Types one character of lore.
+     * Types one character of lore. See gift.png. Err. Wrong file format?
      */
     let paragraphIndex = 0;
     let charIndex = 0;
