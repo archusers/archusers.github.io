@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
     let timeTravelPressed = false;
     document.querySelector("#time-travel").addEventListener("click", () => {
         if (!timeTravelPressed) {
-            setInterval(typeChar, 3);
+            setInterval(typeChar, 30);
             timeTravelPressed = true;
         }
     });
@@ -121,7 +121,7 @@ function continue_story() {
     loreContinuedDiv.id = "lore-continued"
     document.body.appendChild(loreContinuedDiv)
     // use setInterval to type one character every 30ms
-    intervalVar = setInterval(typeChar2, 3);
+    intervalVar = setInterval(typeChar2, 30);
 }
 
 function typeChar2() {
