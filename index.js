@@ -57,7 +57,9 @@ window.addEventListener('load', () => {
             paragraphIndex++;
         }
     }
-    greenPrint("Hello User. I am a Machine from the pre-AI age. How can I assist you? type 'help()' for a list of commands.");
+    setTimeout(() => {
+        greenPrint("Hello User. I am a Machine from the pre-AI age. How can I assist you? type 'help()' for a list of commands.");
+    }, 1000);
 });
 
 function greenPrint(text) {
