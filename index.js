@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
     function countdown() {
         const now = Date.now();
         const grad = new Date('2022-05-01T00:00:00').getTime();
-        const timeLeft = Math.max(grad - now, 0);
+        const timeLeft = Math.max(now - grad, 0);
         const secondsLeft = Math.floor(timeLeft / 1000) % 60;
         const minutesLeft = Math.floor(timeLeft / (1000 * 60)) % 60;
         const hoursLeft = Math.floor(timeLeft / (1000 * 60 * 60)) % 24;
@@ -12,7 +12,7 @@ window.addEventListener('load', () => {
         if (yearsLeft > 0) {
             yearStr = `${yearsLeft} ${yearsLeft > 1 ? "years" : "year"}, `;
         }
-        const countDown = `Graduating in ${yearStr}${daysLeft} days, ${hoursLeft} hours, ${minutesLeft} minutes, ${secondsLeft} seconds.`;
+        const countDown = `Graduated ${yearStr}${daysLeft} days, ${hoursLeft} hours, ${minutesLeft} minutes, ${secondsLeft} seconds ago.`;
 
         const graduatingElement = document.getElementById('graduating');
         graduatingElement.innerHTML = countDown;
