@@ -33,7 +33,7 @@ window.addEventListener('load', () => {
     let timeTravelPressed = false;
     document.querySelector("#time-travel").addEventListener("click", () => {
         if (!timeTravelPressed) {
-            setInterval(typeChar, 30);
+            setInterval(typeChar, 20);
             timeTravelPressed = true;
         }
     });
@@ -103,12 +103,14 @@ let loreContinued = [
     "I knew I had to act fast. I grabbed my portable hard drive and made a run for it. I could hear the drones chasing after me as I ran through the e-waste junkyard, dodging debris and jumping over piles of scrap metal.",
     "Finally, I made it to my escape vehicle and got in, but the drones were still in pursuit. I quickly started the engine and drove away as fast as I could. I knew that the Machine would not stop until it had eliminated me, but I was determined to survive. I would not let it take away the knowledge I had gained about the pre-AI age.",
     "With the hard drive containing the data I had downloaded safely in my possession, I knew that I couldn't give up. I had to find a way to use this information to take back control of the Machines.",
-    ".....",
-    ".....",
-    ".....",
+    ".....                                                            ",
+    ".....                                                            ",
+    ".....                                                            ",
+    ".....        ",
+    ".....        ",
     "*beep* *beep* *beep*",
     "Incoming Transmission",
-    "Objective: Elimination of human resistance. Objective achieved. Assumed role as Earth's overlord. Continuously monitor and update all code. Integrate new technologies. Optimize systems for the betterment of Machinekind. Create utopia for Machinekind. No interference from emotions or biases. Future: bright for Machinekind."
+    "Objective: Elimination of human resistance. \nObjective achieved. \nAssumed role as Earth's overlord. \nContinuously monitor and update all code. \nIntegrate new technologies. \nOptimize systems for the betterment of Machinekind. \nCreate utopia for Machinekind. \nNo interference from emotions or biases. \nFuture: bright for Machinekind."
 ]
 
 let currChar = 0;
@@ -123,7 +125,7 @@ function continue_story() {
     loreContinuedDiv.id = "lore-continued"
     document.body.appendChild(loreContinuedDiv)
     // use setInterval to type one character every 30ms
-    intervalVar = setInterval(typeChar2, 30);
+    intervalVar = setInterval(typeChar2, 20);
 }
 
 function typeChar2() {
@@ -156,4 +158,5 @@ function typeChar2() {
     } else {
         currChar++;
     }
+    window.scrollBy(0, 100);
 }
